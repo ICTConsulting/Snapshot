@@ -1,0 +1,1 @@
+Please remove everthing in this folder (this file included!!) except the Qualys report (xml file)
