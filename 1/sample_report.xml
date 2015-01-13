@@ -1,0 +1,759 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<!DOCTYPE SCAN SYSTEM "https://qualysguard.qualys.eu/scan-1.dtd">
+<SCAN value="scan/1400575874.78958">
+
+<HEADER>
+  <KEY value="USERNAME">foo</KEY>
+  <KEY value="COMPANY"><![CDATA[test]]></KEY>
+  <KEY value="DATE">2014-12-22T08:51:47Z</KEY>
+  <KEY value="TITLE"><![CDATA[sample of a report]]></KEY>
+  <KEY value="TARGET"><![CDATA[10.0.0.1]]></KEY>
+  <KEY value="EXCLUDED_TARGET"><![CDATA[N/A]]></KEY>
+  <KEY value="DURATION">00:17:54</KEY>
+  <KEY value="SCAN_HOST">SIMI-SCANNER-2 (Scanner 7.7.26-1, Vulnerability Signatures 2.2.729-3)</KEY>
+  <KEY value="NBHOST_ALIVE">1</KEY>
+  <KEY value="NBHOST_TOTAL">1</KEY>
+  <KEY value="REPORT_TYPE">On-demand</KEY>
+  <KEY value="OPTIONS"><![CDATA[Full TCP scan, Standard Password Brute Forcing, parallel ML scaling disabled for appliances, Load balancer detection OFF, Overall Performance: Normal, Hosts to Scan in Parallel - External Scanners: 15, Hosts to Scan in Parallel - Scanner Appliances: 30, Total Processes to Run in Parallel: 10, HTTP Processes to Run in Parallel: 10, Packet (Burst) Delay: Medium, Intensity: Normal]]></KEY>
+  <KEY value="STATUS">FINISHED</KEY>
+  <OPTION_PROFILE>
+    <OPTION_PROFILE_TITLE option_profile_default="0"><![CDATA[Payment Card Industry (PCI) Options]]></OPTION_PROFILE_TITLE>
+  </OPTION_PROFILE>
+</HEADER>
+
+<IP value="10.0.0.1" name="test.net">
+  <OS><![CDATA[Windows 2008/7]]></OS>
+  <NETBIOS_HOSTNAME><![CDATA[TEST]]></NETBIOS_HOSTNAME>
+  <INFOS>
+    <CAT value="TCP/IP">
+      <INFO number="82040" severity="1">
+        <TITLE><![CDATA[ICMP Replies Received]]></TITLE>
+        <LAST_UPDATE><![CDATA[2003-01-16T20:14:30Z]]></LAST_UPDATE>
+        <PCI_FLAG>0</PCI_FLAG>
+        <DIAGNOSIS><![CDATA[ICMP (Internet Control and Error Message Protocol) is a protocol encapsulated in IP packets. ICMP's principal purpose is to provide a protocol layer that informs gateways of the inter-connectivity and accessibility of other gateways or hosts. 
+<P>
+We have sent the following types of packets to trigger the host to send us ICMP replies: 
+<P>
+Echo Request (to trigger Echo Reply)<br>
+Timestamp Request (to trigger Timestamp Reply)<br>
+Address Mask Request (to trigger Address Mask Reply)<br>
+UDP Packet (to trigger Port Unreachable Reply)<br>
+IP Packet with Protocol >= 250 (to trigger Protocol Unreachable Reply)
+<P>
+Listed in the "Result" section are the ICMP replies that we have received.]]></DIAGNOSIS>
+        <RESULT format="table"><![CDATA[ICMP Reply Type	Triggered By	Additional Information
+Echo (type=0 code=0)	Echo Request	Echo Reply
+Unreachable (type=3 code=3)	UDP Port 517	Port Unreachable
+Time Stamp (type=14 code=0)	Time Stamp Request	08:59:26 GMT
+Unreachable (type=3 code=3)	UDP Port 1	Port Unreachable
+Unreachable (type=3 code=3)	UDP Port 1037	Port Unreachable
+Unreachable (type=3 code=3)	UDP Port 137	Port Unreachable
+Unreachable (type=3 code=3)	UDP Port 5501	Port Unreachable
+Unreachable (type=3 code=3)	UDP Port 10067	Port Unreachable
+Unreachable (type=3 code=2)	IP with High Protocol	Protocol Unreachable
+Unreachable (type=3 code=3)	UDP Port 6969	Port Unreachable
+Unreachable (type=3 code=3)	UDP Port 98	Port Unreachable
+Unreachable (type=3 code=3)	UDP Port 1978	Port Unreachable
+Unreachable (type=3 code=3)	UDP Port 2001	Port Unreachable]]></RESULT>
+      </INFO>
+      <INFO number="82044" severity="1">
+        <TITLE><![CDATA[NetBIOS Host Name]]></TITLE>
+        <LAST_UPDATE><![CDATA[2005-01-21T00:10:23Z]]></LAST_UPDATE>
+        <PCI_FLAG>0</PCI_FLAG>
+        <DIAGNOSIS><![CDATA[The NetBIOS host name of this computer has been detected.]]></DIAGNOSIS>
+        <CONSEQUENCE><![CDATA[N/A]]></CONSEQUENCE>
+        <SOLUTION><![CDATA[N/A]]></SOLUTION>
+        <RESULT><![CDATA[TEST]]></RESULT>
+      </INFO>
+      <INFO number="82063" severity="2">
+        <TITLE><![CDATA[Host Uptime Based on TCP TimeStamp Option]]></TITLE>
+        <LAST_UPDATE><![CDATA[2007-05-29T18:56:36Z]]></LAST_UPDATE>
+        <PCI_FLAG>0</PCI_FLAG>
+        <DIAGNOSIS><![CDATA[The TCP/IP stack on the host supports the TCP TimeStamp (kind 8) option. Typically the timestamp used is the host's uptime (since last reboot) in various units (e.g., one hundredth of second, one tenth of a second, etc.). Based on this, we can obtain the host's uptime. The result is given in the Result section below.
+<P>
+Some operating systems (e.g., MacOS, OpenBSD) use a non-zero, probably random, initial value for the timestamp. For these operating systems, the uptime obtained does not reflect the actual uptime of the host; the former is always larger than the latter.]]></DIAGNOSIS>
+        <CONSEQUENCE><![CDATA[N/A]]></CONSEQUENCE>
+        <SOLUTION><![CDATA[N/A]]></SOLUTION>
+        <RESULT><![CDATA[Based on TCP timestamps obtained via port 135, the host&apos;s uptime is 50 days, 0 hours, and 8 minutes.
+The TCP timestamps from the host are in units of 10 milliseconds.]]></RESULT>
+      </INFO>
+      <INFO number="82045" severity="1">
+        <TITLE><![CDATA[Degree of Randomness of TCP Initial Sequence Numbers]]></TITLE>
+        <LAST_UPDATE><![CDATA[2004-11-19T21:53:59Z]]></LAST_UPDATE>
+        <PCI_FLAG>0</PCI_FLAG>
+        <DIAGNOSIS><![CDATA[TCP Initial Sequence Numbers (ISNs) obtained in the SYNACK replies from the host are analyzed to determine how random they are. The average change between subsequent ISNs and the standard deviation from the average are displayed in the RESULT section. Also included is the degree of difficulty for exploitation of the TCP ISN generation scheme used by the host.]]></DIAGNOSIS>
+        <CONSEQUENCE><![CDATA[N/A]]></CONSEQUENCE>
+        <SOLUTION><![CDATA[N/A]]></SOLUTION>
+        <RESULT><![CDATA[Average change between subsequent TCP initial sequence numbers is 1014998565 with a standard deviation of 599621413. These TCP initial sequence numbers were triggered by TCP SYN probes sent to the host at an average rate of 1/(6990 microseconds). The degree of difficulty to exploit the TCP initial sequence number generation scheme is: hard.]]></RESULT>
+      </INFO>
+      <INFO number="82046" severity="1">
+        <TITLE><![CDATA[IP ID Values Randomness]]></TITLE>
+        <LAST_UPDATE><![CDATA[2006-07-27T21:45:19Z]]></LAST_UPDATE>
+        <PCI_FLAG>0</PCI_FLAG>
+        <DIAGNOSIS><![CDATA[The values for the identification (ID) field in IP headers in IP packets from the host are analyzed to determine how random they are. The changes between subsequent ID values for either the network byte ordering or the host byte ordering, whichever is smaller, are displayed in the RESULT section along with the duration taken to send the probes. When incremental values are used, as is the case for TCP/IP implementation in many operating systems, these changes reflect the network load of the host at the time this test was conducted.
+<P>
+Please note that for reliability reasons only the network traffic from open TCP ports is analyzed.]]></DIAGNOSIS>
+        <CONSEQUENCE><![CDATA[N/A]]></CONSEQUENCE>
+        <SOLUTION><![CDATA[N/A]]></SOLUTION>
+        <RESULT><![CDATA[IP ID changes observed (network order) for port 135: 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 
+Duration: 15 milli seconds]]></RESULT>
+      </INFO>
+    </CAT>
+    <CAT value="Information gathering">
+      <INFO number="6" severity="1">
+        <TITLE><![CDATA[DNS Host Name]]></TITLE>
+        <LAST_UPDATE><![CDATA[1999-01-01T08:00:00Z]]></LAST_UPDATE>
+        <PCI_FLAG>0</PCI_FLAG>
+        <DIAGNOSIS><![CDATA[The fully qualified domain name of this host, if it was obtained from a DNS server, is displayed in the RESULT section.]]></DIAGNOSIS>
+        <RESULT format="table"><![CDATA[IP address	Host name
+10.0.0.1	test.net]]></RESULT>
+      </INFO>
+      <INFO number="45006" severity="1">
+        <TITLE><![CDATA[Traceroute]]></TITLE>
+        <LAST_UPDATE><![CDATA[2003-05-09T18:28:51Z]]></LAST_UPDATE>
+        <PCI_FLAG>0</PCI_FLAG>
+        <DIAGNOSIS><![CDATA[Traceroute describes the path in realtime from the scanner to the remote host being contacted. It reports the IP addresses of all the routers in between.]]></DIAGNOSIS>
+        <RESULT format="table"><![CDATA[Hops	IP	Round Trip Time	Probe
+1	10.0.0.1	0.73ms	ICMP
+2	10.0.0.1	0.45ms	ICMP
+3	10.0.0.1	0.81ms	TCP]]></RESULT>
+      </INFO>
+      <INFO number="45039" severity="1">
+        <TITLE><![CDATA[Host Names Found]]></TITLE>
+        <LAST_UPDATE><![CDATA[2005-02-14T21:01:44Z]]></LAST_UPDATE>
+        <PCI_FLAG>0</PCI_FLAG>
+        <DIAGNOSIS><![CDATA[The following host names were discovered for this computer using various methods such as DNS look up, NetBIOS query, and SQL server name query.]]></DIAGNOSIS>
+        <CONSEQUENCE><![CDATA[N/A]]></CONSEQUENCE>
+        <SOLUTION><![CDATA[N/A]]></SOLUTION>
+        <RESULT format="table"><![CDATA[Host Name	Source
+test.net	NTLM DNS
+test.net	FQDN
+TEST	NTLM NetBIOS]]></RESULT>
+      </INFO>
+      <INFO number="45038" severity="1">
+        <TITLE><![CDATA[Host Scan Time]]></TITLE>
+        <LAST_UPDATE><![CDATA[2004-11-19T02:46:12Z]]></LAST_UPDATE>
+        <PCI_FLAG>0</PCI_FLAG>
+        <DIAGNOSIS><![CDATA[The Host Scan Time is the period of time it takes the scanning engine to perform the vulnerability assessment of a single target host. The Host Scan Time for this host is reported in the Result section below. 
+<P>
+The Host Scan Time does not have a direct correlation to the Duration time as displayed in the Report Summary section of a scan results report. The Duration is the period of time it takes the service to perform a scan task. The Duration includes the time it takes the service to scan all hosts, which may involve parallel scanning. It also includes the time it takes for a scanner appliance to pick up the scan task and transfer the results back to the service's Secure Operating Center. Further, when a scan task is distributed across multiple scanners, the Duration includes the time it takes to perform parallel host scanning on all scanners.]]></DIAGNOSIS>
+        <CONSEQUENCE><![CDATA[N/A]]></CONSEQUENCE>
+        <SOLUTION><![CDATA[N/A]]></SOLUTION>
+        <RESULT><![CDATA[Scan duration: 1069 seconds
+
+Start time: Tue, May 20 2014, 08:51:48 GMT
+
+End time: Tue, May 20 2014, 09:09:37 GMT]]></RESULT>
+      </INFO>
+    </CAT>
+    <CAT value="Windows">
+      <INFO number="90194" severity="2">
+        <TITLE><![CDATA[Windows Registry Pipe Access Level]]></TITLE>
+        <LAST_UPDATE><![CDATA[2005-06-16T20:28:59Z]]></LAST_UPDATE>
+        <PCI_FLAG>0</PCI_FLAG>
+        <DIAGNOSIS><![CDATA[Return code from remote access to the Windows registry pipe is displayed. The CIFS service accesses the Windows registry through a named pipe. Authentication to CIFS was successful, but it could not access the Registry named pipe if the error code is not 0.]]></DIAGNOSIS>
+        <CONSEQUENCE><![CDATA[Vulnerabilities that require Windows registry access may not have been detected during the scan if the error code is not 0.]]></CONSEQUENCE>
+        <SOLUTION><![CDATA[Error code 0x00 means the pipe access was successful. Other error codes (for eg: 0x0) denote unsuccessful access.]]></SOLUTION>
+        <RESULT><![CDATA[Access to Remote Registry Service is denied, error: 0x0]]></RESULT>
+      </INFO>
+      <INFO number="90788" severity="1">
+        <TITLE><![CDATA[Microsoft Windows Network Level Authentication Disabled]]></TITLE>
+        <LAST_UPDATE><![CDATA[2013-05-01T17:40:17Z]]></LAST_UPDATE>
+        <PCI_FLAG>0</PCI_FLAG>
+        <DIAGNOSIS><![CDATA[Microsoft Windows Network Level Authentication (NLA) is an authentication method that enhances the security of a Remote Desktop Session Host server by requiring the user to be authenticated before a session is created.
+<P>
+The registry key for the Network Level Authentication (NLA) is disabled.<P>
+
+Network Level Authentication is supported on Windows Vista, Windows 7, Windows Server 2008, and Windows Server 2008 R2]]></DIAGNOSIS>
+        <CONSEQUENCE><![CDATA[Enabling NLA can help protect the remote computer from malicious users and malicious software attacks.]]></CONSEQUENCE>
+        <SOLUTION><![CDATA[See Microsoft Knowledge Base Article <A HREF="http://support.microsoft.com/kb/2671387" TARGET="_blank">2671387</A> to use the automated Microsoft Fix it solution to enable this feature.
+<P>
+As a precaution, always test in a QA or rehearsal environment before rolling out to production.<P>
+<B>Note: Client computers that do not support Credential Security Support Provider (CredSSP) protocol will not be able to access servers protected with Network Level Authentication. Windows XP does not support the CredSSP protocol by default.</B>]]></SOLUTION>
+        <RESULT><![CDATA[QID: 90788 detected on port 3389 over TCP.]]></RESULT>
+      </INFO>
+    </CAT>
+    <CAT value="SMB / NETBIOS">
+      <INFO number="70030" severity="3">
+        <TITLE><![CDATA[NetBIOS Shared Folders]]></TITLE>
+        <LAST_UPDATE><![CDATA[2003-10-29T22:10:26Z]]></LAST_UPDATE>
+        <PCI_FLAG>0</PCI_FLAG>
+        <DIAGNOSIS><![CDATA[The following NetBIOS shared folders have been detected.]]></DIAGNOSIS>
+        <RESULT format="table"><![CDATA[Device Name	Comment	Type	Label	Size	Description
+ADMIN$	Remote Admin	-2147483648	 	 	 
+C$	Default share	-2147483648	 	 	 
+Dati	 	0	 	 	 
+E$	Default share	-2147483648	 	 	 
+IPC$	Remote IPC	-2147483645]]></RESULT>
+      </INFO>
+      <INFO number="70028" severity="1">
+        <TITLE><![CDATA[Windows Authentication Method]]></TITLE>
+        <LAST_UPDATE><![CDATA[2008-12-09T22:36:26Z]]></LAST_UPDATE>
+        <PCI_FLAG>0</PCI_FLAG>
+        <DIAGNOSIS><![CDATA[Windows authentication was performed. The Results section in your detailed results includes a list of authentication credentials used.
+<P>
+The service also attempts to authenticate using common credentials. You should verify that the credentials used for successful authentication were those that were provided in the Windows authentication record. User-provided credentials failed if the discovery method shows &quot;Unable to log in using credentials provided by user, fallback to NULL session&quot;. If this is the case, verify that the credentials specified in the Windows authentication record are valid for this host.]]></DIAGNOSIS>
+        <CONSEQUENCE><![CDATA[N/A]]></CONSEQUENCE>
+        <SOLUTION><![CDATA[N/A]]></SOLUTION>
+        <RESULT format="table"><![CDATA[User Name	(none)
+Domain	(none)
+Authentication Scheme	NULL session
+Security	User-based
+SMBv1 Signing	Disabled
+Discovery Method	NULL session, no valid login credentials provided or found
+CIFS Version	SMB v2.1]]></RESULT>
+      </INFO>
+    </CAT>
+    <CAT value="General remote services">
+      <INFO number="42017" severity="3">
+        <TITLE><![CDATA[Remote Access or Management Service Detected]]></TITLE>
+        <LAST_UPDATE><![CDATA[2011-10-17T18:28:42Z]]></LAST_UPDATE>
+        <PCI_FLAG>0</PCI_FLAG>
+        <DIAGNOSIS><![CDATA[A remote access or remote management service was detected. If such a service is accessible to malicious users it can be used to carry different type of attacks. Malicious users could try to brute force credentials or collect additional information on the service which could enable them in crafting further attacks. 
+<P>
+The Results section includes information on the remote access service that was found on the target.
+<P>
+Services like Telnet, Rlogin, SSH, windows remote desktop, pcAnywhere, Citrix Management Console, Remote Admin (RAdmin), VNC, OPENVPN and ISAKMP are checked.]]></DIAGNOSIS>
+        <CONSEQUENCE><![CDATA[Consequences vary by the type of attack.]]></CONSEQUENCE>
+        <SOLUTION><![CDATA[Expose the remote access or remote management services only to the system administrators or intended users of the system.]]></SOLUTION>
+        <RESULT><![CDATA[Service name: Remote Desktop on TCP port 3389.]]></RESULT>
+      </INFO>
+    </CAT>
+    <CAT value="Web Application" port="47001" protocol="tcp">
+      <INFO number="150009" severity="1">
+        <TITLE><![CDATA[Links Crawled]]></TITLE>
+        <LAST_UPDATE><![CDATA[2008-10-21T22:37:20Z]]></LAST_UPDATE>
+        <PCI_FLAG>0</PCI_FLAG>
+        <DIAGNOSIS><![CDATA[The list of unique links crawled by the Web application scanner appear in the Results  section. This list may contain fewer links than the maximum threshold defined at scan launch. The maximum links to crawl includes links in this list, requests made via HTML forms, and requests for the same link made as an anonymous and authenticated user.]]></DIAGNOSIS>
+        <CONSEQUENCE><![CDATA[N/A]]></CONSEQUENCE>
+        <SOLUTION><![CDATA[N/A]]></SOLUTION>
+        <RESULT><![CDATA[Duration of crawl phase (seconds): 21.00
+Number of links: 1
+(This number excludes form requests and links re-requested during authentication.)
+
+http://10.0.0.1:47001/]]></RESULT>
+      </INFO>
+      <INFO number="150021" severity="1">
+        <TITLE><![CDATA[Scan Diagnostics]]></TITLE>
+        <LAST_UPDATE><![CDATA[2009-01-16T18:02:19Z]]></LAST_UPDATE>
+        <PCI_FLAG>0</PCI_FLAG>
+        <DIAGNOSIS><![CDATA[This check provides various details of the scan's performance and behavior. In some cases, this check can be used to identify problems that the scanner encountered when crawling the target Web application.]]></DIAGNOSIS>
+        <CONSEQUENCE><![CDATA[The scan diagnostics data provides technical details about the crawler's performance and behavior. This information does not necessarily imply problems with the Web application.]]></CONSEQUENCE>
+        <SOLUTION><![CDATA[No action is required.]]></SOLUTION>
+        <RESULT><![CDATA[Collected 1 links overall.
+Path manipulation: estimated time &lt; 1 minute (116 tests, 1 inputs)
+Path manipulation: 116 vulnsigs tests, completed 100 requests, 0 seconds. All tests completed.
+WS enumeration: estimated time &lt; 1 minute (9 tests, 1 inputs)
+WS enumeration: 9 vulnsigs tests, completed 9 requests, 0 seconds. All tests completed.
+Arbitrary File Upload  estimated time: no tests enabled
+HTTP call manipulation: estimated time &lt; 1 minute (33 tests, 0 inputs)
+HTTP call manipulation: 33 vulnsigs tests, completed 0 requests, 0 seconds. No tests to execute.
+Open Redirect analysis: estimated time &lt; 1 minute (1 tests, 0 inputs)
+Open Redirect analysis: 1 vulnsigs tests, completed 0 requests, 0 seconds. No tests to execute.
+File Inclusion analysis: estimated time &lt; 1 minute (1 tests, 1 inputs)
+File Inclusion analysis: 1 vulnsigs tests, completed 0 requests, 0 seconds. All tests completed.
+Cookie manipulation: estimated time &lt; 1 minute (33 tests, 0 inputs)
+Cookie manipulation: 33 vulnsigs tests, completed 0 requests, 0 seconds. No tests to execute.
+Header manipulation: estimated time &lt; 1 minute (33 tests, 1 inputs)
+Header manipulation: 33 vulnsigs tests, completed 17 requests, 0 seconds. XSS optimization removed 24 links. Completed 17 requests of 66 estimated requests (26%). All tests completed.
+Total requests made: 141
+Average server response time: 0.01 seconds
+Most recent links:
+404 http://10.0.0.1:47001/
+404 http://10.0.0.1:47001/
+404 http://10.0.0.1:47001/
+404 http://10.0.0.1:47001/
+404 http://10.0.0.1:47001/
+404 http://10.0.0.1:47001/
+404 http://10.0.0.1:47001/
+404 http://10.0.0.1:47001/
+404 http://10.0.0.1:47001/
+404 http://10.0.0.1:47001/
+Scan launched using PCI WAS combined mode.
+HTML form authentication unavailable, no WEBAPP entry found]]></RESULT>
+      </INFO>
+    </CAT>
+    <CAT value="CGI" port="47001" protocol="tcp">
+      <INFO number="12230" severity="1">
+        <TITLE><![CDATA[Default Web Page]]></TITLE>
+        <LAST_UPDATE><![CDATA[2006-06-19T19:34:06Z]]></LAST_UPDATE>
+        <PCI_FLAG>0</PCI_FLAG>
+        <DIAGNOSIS><![CDATA[The Result section displays the default Web page for the Web server.]]></DIAGNOSIS>
+        <CONSEQUENCE><![CDATA[N/A]]></CONSEQUENCE>
+        <SOLUTION><![CDATA[N/A]]></SOLUTION>
+        <RESULT><![CDATA[Content-Type: text/html; charset=us-ascii
+Server: Microsoft-HTTPAPI/2.0
+Date: Tue, 20 May 2014 08:55:40 GMT
+Connection: close
+Content-Length: 315
+
+&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.01//EN&quot;&quot;http://www.w3.org/TR/html4/strict.dtd&quot;&gt;
+&lt;HTML&gt;&lt;HEAD&gt;&lt;TITLE&gt;Not Found&lt;/TITLE&gt;
+&lt;META HTTP-EQUIV=&quot;Content-Type&quot; Content=&quot;text/html; charset=us-ascii&quot;&gt;&lt;/HEAD&gt;
+&lt;BODY&gt;&lt;h2&gt;Not Found&lt;/h2&gt;
+&lt;hr&gt;&lt;p&gt;HTTP Error 404. The requested resource is not found.&lt;/p&gt;
+&lt;/BODY&gt;&lt;/HTML&gt;]]></RESULT>
+      </INFO>
+    </CAT>
+    <CAT value="Web server" port="3389" protocol="tcp" misc="over ssl">
+      <INFO number="86002" severity="1">
+        <TITLE><![CDATA[SSL Certificate - Information]]></TITLE>
+        <LAST_UPDATE><![CDATA[2003-01-24T01:09:39Z]]></LAST_UPDATE>
+        <PCI_FLAG>0</PCI_FLAG>
+        <RESULT format="table"><![CDATA[NAME	VALUE
+
+(0)CERTIFICATE 0	 
+
+(0)Version	3 (0x2)
+
+(0)Serial Number	 14:ba:67:ae:2d:3f:60:8c:4d:c0:ad:e2:86:a9:9f:6c 
+
+(0)Signature Algorithm	sha1WithRSAEncryption
+
+(0)ISSUER NAME	 
+commonName	test.net
+(0)SUBJECT NAME	 
+commonName	test.net
+(0)Valid From	May 14 04:18:55 2014 GMT
+
+(0)Valid Till	Nov 13 04:18:55 2014 GMT
+
+(0)Public Key Algorithm	rsaEncryption
+
+(0)RSA Public Key	(2048 bit)
+
+(0) 	 Public-Key: (2048 bit) 
+
+(0) 	 Modulus: 
+
+(0) 	 00:a4:d6:46:08:91:31:96:0b:a9:6f:3f:5a:67:03: 
+
+(0) 	 8e:af:bf:a1:1a:60:12:78:9d:5f:d5:fe:4c:1a:6f: 
+
+(0) 	 f6:f2:40:0f:57:09:5c:26:dd:d3:31:f3:aa:45:c3: 
+
+(0) 	 8d:d8:51:d9:11:c1:cd:65:a2:ed:3c:fe:fa:31:5c: 
+
+(0) 	 6a:50:e2:ae:00:5b:d2:f9:a6:45:9d:3f:1b:30:f2: 
+
+(0) 	 71:d3:c8:36:f7:2d:11:9c:93:23:f6:f5:47:79:ab: 
+
+(0) 	 c7:64:94:64:78:39:12:86:fb:8e:64:5e:e7:7a:4c: 
+
+(0) 	 07:19:c1:fd:02:e5:cb:26:39:45:fc:e6:e2:41:0a: 
+
+(0) 	 40:7b:50:f6:7f:fe:08:53:a0:dc:35:dd:f4:e7:36: 
+
+(0) 	 b5:c9:48:42:e4:45:4e:02:c3:da:7f:0d:3c:7a:cb: 
+
+(0) 	 0a:93:12:43:b2:29:bf:9c:91:d9:63:7c:67:2e:10: 
+
+(0) 	 48:68:64:fd:95:d1:c1:da:8e:97:3b:3e:59:36:a7: 
+
+(0) 	 65:ac:a8:91:5d:ff:f8:dc:d5:ed:ed:6d:fd:98:ac: 
+
+(0) 	 74:c5:7f:b5:48:a3:70:96:b4:f6:e4:08:78:e7:31: 
+
+(0) 	 df:9c:0b:b0:d8:25:52:63:d6:1b:5f:de:ac:f7:13: 
+
+(0) 	 28:c6:9a:3a:73:cb:82:13:8d:cf:2f:22:c9:f1:ee: 
+
+(0) 	 03:7a:6a:f8:06:73:cc:ce:b8:64:f7:bb:ca:e0:17: 
+
+(0) 	 8c:ff 
+
+(0) 	 Exponent: 65537 (0x10001) 
+
+(0)X509v3 EXTENSIONS	 
+
+(0)X509v3 Extended Key Usage	 TLS Web Server Authentication
+
+(0)X509v3 Key Usage	 Key Encipherment, Data Encipherment
+
+(0)Signature	(256 octets) 
+
+(0) 	0f:49:72:e7:88:ef:14:e9:90:a3:5e:11:6f:ee:3e:6f
+
+(0) 	57:14:a7:5d:e5:d1:03:f8:8c:b7:15:fe:90:3b:47:83
+
+(0) 	07:ca:e8:52:7d:22:49:19:7d:d3:9d:2c:0b:c4:10:43
+
+(0) 	27:62:5e:1c:85:3a:90:68:3c:bc:5b:2e:29:18:34:90
+
+(0) 	11:db:87:b8:e9:27:80:ea:df:f8:80:c7:f3:e9:63:a4
+
+(0) 	96:bf:b7:37:1d:37:e9:57:7c:9e:33:92:3f:cb:a3:98
+
+(0) 	4b:d2:8b:68:23:d0:0f:70:e7:5b:a5:02:8e:8a:52:82
+
+(0) 	f7:c1:9d:ae:33:64:84:ac:f8:8c:49:de:62:4a:78:f7
+
+(0) 	db:40:58:7c:d3:e6:5b:26:5b:5c:a2:ee:49:26:39:39
+
+(0) 	1f:f0:cf:70:52:18:0b:7b:da:06:53:82:66:4d:07:f2
+
+(0) 	05:6b:37:cb:43:64:7a:3f:08:96:6e:ab:86:9e:5c:63
+
+(0) 	cb:92:ce:63:3e:77:ec:f9:17:9c:89:b2:71:87:c1:a0
+
+(0) 	6b:44:40:45:8e:3a:5d:3c:48:bb:3c:9e:ce:a5:09:be
+
+(0) 	8c:62:8d:fc:53:8f:bb:48:ac:28:3a:6d:eb:0a:44:42
+
+(0) 	f7:cf:e1:ce:8d:b1:9f:2b:f7:a5:5a:cd:38:ce:d5:29
+
+(0) 	14:fd:86:57:9f:90:d1:eb:51:a7:03:c5:04:f7:60:f5]]></RESULT>
+      </INFO>
+    </CAT>
+    <CAT value="General remote services" port="3389" protocol="tcp" misc="over ssl">
+      <INFO number="38600" severity="1">
+        <TITLE><![CDATA[SSL Certificate will expire within next six months]]></TITLE>
+        <LAST_UPDATE><![CDATA[2012-12-26T21:36:42Z]]></LAST_UPDATE>
+        <PCI_FLAG>0</PCI_FLAG>
+        <DIAGNOSIS><![CDATA[Certificate are used for authentication purposes in different protocols such as SSL/TLS. Each certificate has a validity period outside of which it is supposed to be considered invalid. This QID is reported to inform that a certificate will expire within next six months. The advance notice can be helpful since obtaining a certificate can take some time.]]></DIAGNOSIS>
+        <CONSEQUENCE><![CDATA[Expired certificates can cause connection disruptions or compromise the integrity and privacy of the connections being protected by certificates.]]></CONSEQUENCE>
+        <SOLUTION><![CDATA[Contact the certificate authority that signed your certificate to arrange for a renewal.]]></SOLUTION>
+        <RESULT><![CDATA[Certificate #0 CN=test.net The certificate will expire within six months: Nov 13 04:18:55 2014 GMT]]></RESULT>
+      </INFO>
+      <INFO number="42350" severity="1">
+        <TITLE><![CDATA[TLS Secure Renegotiation Extension Supported]]></TITLE>
+        <LAST_UPDATE><![CDATA[2011-12-01T20:33:23Z]]></LAST_UPDATE>
+        <PCI_FLAG>0</PCI_FLAG>
+        <DIAGNOSIS><![CDATA[Secure Socket Layer (SSL) and Transport Layer Security (TLS) renegotiation are vulnerable to an attack in which the attacker forms a TLS connection with the target server, injects content of his choice, and then splices in a new TLS connection from a client. The server treats the client's initial TLS handshake as a renegotiation and thus believes that the initial data transmitted by the attacker is from the same entity as the subsequent client data. TLS protocol was extended to cryptographically tierenegotiations to the TLS connections they are being performed over, This is referred to as TLS secure renegotiation extension. This detection determines whether the TLS secure renegotiation extension is supported by the server or not.]]></DIAGNOSIS>
+        <CONSEQUENCE><![CDATA[N/A]]></CONSEQUENCE>
+        <SOLUTION><![CDATA[N/A]]></SOLUTION>
+        <RESULT><![CDATA[TLS Secure Renegotiation Extension Status: supported.]]></RESULT>
+      </INFO>
+      <INFO number="38116" severity="1">
+        <TITLE><![CDATA[SSL Server Information Retrieval]]></TITLE>
+        <LAST_UPDATE><![CDATA[2005-07-29T00:33:33Z]]></LAST_UPDATE>
+        <PCI_FLAG>0</PCI_FLAG>
+        <DIAGNOSIS><![CDATA[<P>The following is a list of supported SSL ciphers.
+<B>Note:</B> If a cipher is included in this list it means that it was 
+possible to establish a SSL connection using that cipher. There are some
+
+web servers setups that allow connections to be established using a LOW 
+grade cipher, only to provide a web page stating that the URL is 
+accessible only through a non-LOW grade cipher. In this case even though
+
+LOW grade cipher will be listed here QID 38140 will not be reported.
+<BR>]]></DIAGNOSIS>
+        <CONSEQUENCE><![CDATA[N/A]]></CONSEQUENCE>
+        <SOLUTION><![CDATA[N/A]]></SOLUTION>
+        <RESULT><![CDATA[SSLv2_PROTOCOL_IS_DISABLED _ _ _ _ _
+SSLv3_PROTOCOL_IS_ENABLED _ _ _ _ _
+SSLv3 COMPRESSION_METHOD None _ _ _
+TLSv1_PROTOCOL_IS_ENABLED _ _ _ _ _
+TLSv1 COMPRESSION_METHOD None _ _ _
+RC4-MD5 RSA RSA MD5 RC4(128) _MEDIUM_
+RC4-SHA RSA RSA SHA1 RC4(128) _MEDIUM_
+DES-CBC3-SHA RSA RSA SHA1 3DES(168) _HIGH_
+AES128-SHA RSA RSA SHA1 AES(128) _MEDIUM_
+AES256-SHA RSA RSA SHA1 AES(256) _HIGH_
+ECDHE-RSA-AES128-SHA ECDH RSA SHA1 AES(128) _MEDIUM_
+ECDHE-RSA-AES256-SHA ECDH RSA SHA1 AES(256) _HIGH_]]></RESULT>
+      </INFO>
+      <INFO number="38291" severity="1">
+        <TITLE><![CDATA[SSL Session Caching Information]]></TITLE>
+        <LAST_UPDATE><![CDATA[2004-09-16T18:11:03Z]]></LAST_UPDATE>
+        <PCI_FLAG>0</PCI_FLAG>
+        <DIAGNOSIS><![CDATA[SSL session is a collection of security parameters that are negotiated by the SSL client and server for each SSL connection. SSL session caching is targeted to reduce the overhead of negotiations in recurring SSL connections. SSL sessions can be reused to resume an earlier connection or to establish multiple simultaneous connections. The client suggests an SSL session to be reused by identifying the session with a Session-ID during SSL handshake. If the server finds it appropriate to reuse the session,  then they both proceed to secure communication with already known security parameters.
+<P>
+This test determines if SSL session caching is enabled on the host.]]></DIAGNOSIS>
+        <CONSEQUENCE><![CDATA[SSL session caching is part of the SSL and TLS protocols and is not a security threat. The result of this test is for informational purposes only.]]></CONSEQUENCE>
+        <RESULT><![CDATA[TLSv1 session caching is disabled on the target.]]></RESULT>
+      </INFO>
+    </CAT>
+  </INFOS>
+  <SERVICES>
+    <CAT value="TCP/IP">
+      <SERVICE number="82023" severity="1">
+        <TITLE><![CDATA[Open TCP Services List]]></TITLE>
+        <LAST_UPDATE><![CDATA[2009-06-15T18:32:21Z]]></LAST_UPDATE>
+        <PCI_FLAG>0</PCI_FLAG>
+        <DIAGNOSIS><![CDATA[The port scanner enables unauthorized users with the appropriate tools to draw a map of all services on this host that can be accessed from the Internet.  The test was carried out with a &quot;stealth&quot; port scanner so that the server does not log real connections.
+<P>
+The Results section displays the port number (Port), the default service listening on the port (IANA Assigned Ports/Services), the description of the service (Description) and the service that the scanner detected using service discovery (Service Detected).]]></DIAGNOSIS>
+        <CONSEQUENCE><![CDATA[Unauthorized users can exploit this information to test vulnerabilities in each of the open services.]]></CONSEQUENCE>
+        <SOLUTION><![CDATA[Shut down any unknown or unused service on the list.  If you have difficulty figuring out which service is provided by which process or program, contact your provider's support team.  For more information about commercial and open-source Intrusion Detection Systems available for detecting port scanners of this kind, visit the <A HREF="http://www.cert.org" TARGET="_blank">CERT Web site</A>.]]></SOLUTION>
+        <RESULT format="table"><![CDATA[Port	IANA Assigned Ports/Services	Description	Service Detected	OS On Redirected Port
+135	msrpc-epmap	epmap DCE endpoint resolution	DCERPC Endpoint Mapper 	 
+445	microsoft-ds	Microsoft-DS	microsoft-ds 	 
+3389	ms-wbt-server	MS WBT Server	win remote desktop over ssl	 
+4000	terabase	Terabase	unknown 	 
+4001	cisco-4001	Cisco port on TCP port 4001 newoak	unknown 	 
+4002	unknown	unknown	unknown 	 
+4003	unknown	unknown	unknown 	 
+4004	unknown	unknown	unknown 	 
+4005	unknown	unknown	unknown 	 
+4006	unknown	unknown	unknown 	 
+4007	unknown	unknown	unknown 	 
+4008	netcheque	NetCheque accounting	unknown 	 
+4012	pda-gate	PDA Gate	unknown 	 
+4014	taiclock	TAICLOCK	unknown 	 
+4020	unknown	unknown	unknown 	 
+47001	unknown	unknown	http 	 
+49152	unknown	unknown	unknown 	 
+49153	unknown	unknown	unknown 	 
+49154	unknown	unknown	unknown 	 
+49155	unknown	unknown	unknown 	 
+49188	unknown	unknown	unknown 	 
+49213	unknown	unknown	unknown]]></RESULT>
+      </SERVICE>
+      <SERVICE number="82004" severity="1">
+        <TITLE><![CDATA[Open UDP Services List]]></TITLE>
+        <LAST_UPDATE><![CDATA[2005-07-11T22:36:34Z]]></LAST_UPDATE>
+        <PCI_FLAG>0</PCI_FLAG>
+        <DIAGNOSIS><![CDATA[A port scanner was used to draw a map of all the UDP services on this host that can be accessed from the Internet.
+<P>
+Note that if the host is behind a firewall, there is a small chance that the list includes a few ports that are filtered or blocked by the firewall but are not actually open on the target host. This (false positive on UDP open ports) may happen when the firewall is configured to reject UDP packets for most (but not all) ports with an ICMP Port Unreachable packet. This may also happen when the firewall is configured to allow UDP packets for most (but not all) ports through and filter/block/drop UDP packets for only a few ports. Both cases are uncommon.]]></DIAGNOSIS>
+        <CONSEQUENCE><![CDATA[Unauthorized users can exploit this information to test vulnerabilities in each of the open services.]]></CONSEQUENCE>
+        <SOLUTION><![CDATA[Shut down any unknown or unused service on the list.  If you have difficulty working out which service is provided by which process or program, contact your provider's support team.  For more information about commercial and open-source Intrusion Detection Systems available for detecting port scanners of this kind, visit the <A HREF="http://www.cert.org" TARGET="_blank">CERT Web site</A>.]]></SOLUTION>
+        <RESULT format="table"><![CDATA[Port	IANA Assigned Ports/Services	Description	Service Detected
+123	ntp	Network Time Protocol	unknown
+500	isakmp	isakmp	unknown]]></RESULT>
+      </SERVICE>
+    </CAT>
+    <CAT value="Information gathering">
+      <SERVICE number="45017" severity="2">
+        <TITLE><![CDATA[Operating System Detected]]></TITLE>
+        <LAST_UPDATE><![CDATA[2005-02-09T19:06:45Z]]></LAST_UPDATE>
+        <PCI_FLAG>0</PCI_FLAG>
+        <DIAGNOSIS><![CDATA[Several different techniques can be used to identify the operating system (OS) running on a host. A short description of these techniques is provided below. The specific technique used to identify the OS on this host is included in the RESULTS section of your report.
+<P>
+1) <B>TCP/IP Fingerprint</B>: The operating system of a host can be identified from a remote system using TCP/IP fingerprinting. All underlying operating system TCP/IP stacks have subtle differences that can be seen in their responses to specially-crafted TCP packets. According to the results of this &quot;fingerprinting&quot; technique, the OS version is among those listed below. 
+<P>
+Note that if one or more of these subtle differences are modified by a firewall or a packet filtering device between the scanner and the host, the fingerprinting technique may fail. Consequently, the version of the OS may not be detected correctly. If the host is behind a proxy-type firewall, the version of the operating system detected may be that for the firewall instead of for the host being scanned.
+<P>
+2) <B>NetBIOS</B>: Short for Network Basic Input Output System, an application programming interface (API) that augments the DOS BIOS by adding special functions for local-area networks (LANs). Almost all LANs for PCs are based on the NetBIOS. Some LAN manufacturers have even extended it, adding additional network capabilities. NetBIOS relies on a message format called Server Message Block (SMB). 
+<P>
+3) <B>PHP Info</B>: PHP is a hypertext pre-processor, an open-source, server-side, HTML-embedded scripting language used to create dynamic Web pages. Under some configurations it is possible to call PHP functions like phpinfo() and obtain operating system information.
+<P>
+4) <B>SNMP</B>: The Simple Network Monitoring Protocol is used to monitor hosts, routers, and the networks to which they attach. The SNMP service maintains Management Information Base (MIB), a set of variables (database) that can be fetched by Managers. These include &quot;MIB_II.system.sysDescr&quot; for the operating system.]]></DIAGNOSIS>
+        <CONSEQUENCE><![CDATA[Not  applicable.]]></CONSEQUENCE>
+        <SOLUTION><![CDATA[Not  applicable.]]></SOLUTION>
+        <RESULT format="table"><![CDATA[Operating System	Technique	ID
+Windows 2008/7	NTLMSSP	 
+Windows Vista / Windows 2008 / Windows 7 / Windows 2012 / Windows 8	TCP/IP Fingerprint	U3414:135
+Windows 2003/XP/Vista/2008	MS-RPC	Fingerprint	 
+Windows Server 2008 R2 Standard 7601 Service Pack 1/Windows Server 2008 R2 Standard 6.1	CIFS via TCP Port 445]]></RESULT>
+      </SERVICE>
+    </CAT>
+    <CAT value="SMB / NETBIOS">
+      <SERVICE number="70022" severity="2">
+        <TITLE><![CDATA[Open DCE-RPC / MS-RPC Services List]]></TITLE>
+        <LAST_UPDATE><![CDATA[2005-06-07T02:31:26Z]]></LAST_UPDATE>
+        <PCI_FLAG>0</PCI_FLAG>
+        <DIAGNOSIS><![CDATA[The following DCE-RPC / MS-RPC services are active on the remote host.]]></DIAGNOSIS>
+        <CONSEQUENCE><![CDATA[N/A]]></CONSEQUENCE>
+        <SOLUTION><![CDATA[Shut down any unknown or unused service on the list. In Windows, this is done in the &quot;Services&quot; Control Panel. In other environments, this usually requires editing a configuration file or start-up script.
+
+If you have provided Windows Authentication credentials, the Microsoft Registry service supporting the named pipe &quot;\PIPE\winreg&quot; must be present to allow CIFS to access the Registry.]]></SOLUTION>
+        <RESULT format="table"><![CDATA[Description	Version	TCP Ports	UDP Ports	HTTP Ports	NetBIOS/CIFS Pipes
+DCE Endpoint Mapper	3.0	135	 	 	 
+DCOM OXID Resolver	0.0	135	 	 	 
+DCOM Remote Activation	0.0	135	 	 	 
+DCOM System Activator	0.0	135	 	 	 
+Microsoft Scheduler Control Service	1.0	 	 	 	\PIPE\atsvc
+Microsoft Security Account Manager	1.0	49154	 	 	\pipe\lsass
+Microsoft Service Control Service	2.0	49188	 	 	 
+Microsoft Spool Subsystem	1.0	49213	 	 	 
+Microsoft Task Scheduler	1.0	 	 	 	\PIPE\atsvc
+WinHttp Auto-Proxy Service	5.1	 	 	 	\PIPE\W32TIME_ALT
+(Unknown Service)	1.0	135	 	 	 
+(Unknown Service)	0.0	135	 	 	 
+(Unknown Service)	2.0	135	 	 	 
+(Unknown Service)	1.0	 	 	 	\PIPE\InitShutdown
+(Unknown Service)	1.0	49152	 	 	\PIPE\InitShutdown
+DHCPv6 Client LRPC Endpoint	1.0	49153	 	 	\pipe\eventlog
+DHCP Client LRPC Endpoint	1.0	49153	 	 	\pipe\eventlog
+NRP server endpoint	1.0	49153	 	 	\pipe\eventlog
+Event log TCPIP	1.0	49153	 	 	\pipe\eventlog
+AppInfo	1.0	49155	 	 	\PIPE\srvsvc, \PIPE\atsvc
+(Unknown Service)	1.0	49155	 	 	\PIPE\srvsvc, \PIPE\atsvc
+Impl friendly name	1.0	49155	 	 	\PIPE\srvsvc, \PIPE\atsvc
+XactSrv service	1.0	49155	 	 	\PIPE\atsvc
+IP Transition Configuration endpoint	1.0	49155	 	 	\PIPE\atsvc
+IKE/Authip API	1.0	49155	 	 	\PIPE\atsvc
+(Unknown Service)	1.0	49155	 	 	\PIPE\atsvc
+Remote Fw APIs	1.0	49213]]></RESULT>
+      </SERVICE>
+    </CAT>
+    <CAT value="Web server" port="47001" protocol="tcp">
+      <SERVICE number="86000" severity="1">
+        <TITLE><![CDATA[Web Server Version]]></TITLE>
+        <LAST_UPDATE><![CDATA[1999-01-01T08:00:00Z]]></LAST_UPDATE>
+        <PCI_FLAG>0</PCI_FLAG>
+        <DIAGNOSIS><![CDATA[N/A]]></DIAGNOSIS>
+        <CONSEQUENCE><![CDATA[N/A]]></CONSEQUENCE>
+        <SOLUTION><![CDATA[N/A]]></SOLUTION>
+        <RESULT format="table"><![CDATA[Server Version	Server Banner
+Microsoft-HTTPAPI/2.0	Microsoft-HTTPAPI/2.0]]></RESULT>
+      </SERVICE>
+    </CAT>
+  </SERVICES>
+  <VULNS>
+    <CAT value="SMB / NETBIOS">
+      <VULN number="70001" severity="3">
+        <TITLE><![CDATA[NetBIOS Shared Folder List Available]]></TITLE>
+        <LAST_UPDATE><![CDATA[2011-10-14T22:39:03Z]]></LAST_UPDATE>
+        <CVSS_BASE source="service">4.3</CVSS_BASE>
+        <CVSS_TEMPORAL>3.7</CVSS_TEMPORAL>
+        <PCI_FLAG>1</PCI_FLAG>
+        <DIAGNOSIS><![CDATA[Unauthorized remote users can list all file systems on this host that are accessible from a remote system.]]></DIAGNOSIS>
+        <CONSEQUENCE><![CDATA[If successfully exploited, unauthorized users can use this information to brute force attack the shared resources and initiate file transfers with this server.]]></CONSEQUENCE>
+        <SOLUTION><![CDATA[Use the Microsoft Computer Management MMC snap-in to connect and review the shares. By default C$, Admin$, and IPC$ are shared on all Windows machines.
+<P>
+Review the machine to ensure that users have not added any additional unauthorized shares, and that all exposed shares are valid .
+<P>
+If no shares are needed, you can filter all Microsoft networking and Samba server ports (TCP ports 135, 137, 138, 139, 445 and UDP ports 135, 137, 138) at your firewall and disable null sessions to NetBIOS.
+
+<BR><BR>
+A suggested workaround.<BR><BR>
+Before editing any configuration file in a production environment, the changes should be well tested in a rehearsal environment.<BR>
+Adding 'restrict anonymous = 2' in smb.conf can help resolve the issue.
+<P>A workaround method for non-domain machines is to modify the local policy.<BR><BR>
+1. Navigate to Administrative tools. <BR>
+2. Open &quot;Local Security Policy Settings&quot; <BR>
+3. Click the plus sign of the folder named &quot;Local Policies&quot; <BR>
+4. Select &quot;Security Options&quot; within the &quot;Local Policies&quot; folder <BR>
+6. Browse to the policy &quot;Network access: Do not allow anonymous enumeration of SAM accounts and shares&quot;<BR>
+7. Enabled the policy.  For Servers this is disabled by default. <BR>
+8. Reboot the computer for the changes to take effect.]]></SOLUTION>
+        <RESULT format="table"><![CDATA[Device Name	Comment	Type
+ADMIN$	Remote Admin	-2147483648
+C$	Default share	-2147483648
+Dati	 	0
+E$	Default share	-2147483648
+IPC$	Remote IPC	-2147483645]]></RESULT>
+      </VULN>
+    </CAT>
+    <CAT value="General remote services" port="3389" protocol="tcp" misc="over ssl">
+      <VULN number="38173" severity="2">
+        <TITLE><![CDATA[SSL Certificate - Signature Verification Failed Vulnerability]]></TITLE>
+        <LAST_UPDATE><![CDATA[2009-05-23T00:02:29Z]]></LAST_UPDATE>
+        <CVSS_BASE source="service">9.4</CVSS_BASE>
+        <CVSS_TEMPORAL>6.9</CVSS_TEMPORAL>
+        <PCI_FLAG>1</PCI_FLAG>
+        <DIAGNOSIS><![CDATA[An SSL Certificate associates an entity (person, organization, host, etc.) with a Public Key. In an SSL connection, the client authenticates the remote server using the server's Certificate and extracts the Public Key in the Certificate to establish the secure connection. The authentication is done by verifying that the public key in the certificate is signed by a trusted third-party Certificate Authority.
+<P>
+If a client is unable to verify the certificate, it can abort communication or prompt the user to continue the communication without authentication.]]></DIAGNOSIS>
+        <CONSEQUENCE><![CDATA[By exploiting this vulnerability, man-in-the-middle attacks in tandem with DNS cache poisoning can occur.
+<P>
+Exception:<BR>
+If the server communicates only with a restricted set of clients who have the server certificate or the trusted CA certificate, then the server or CA certificate may not be available publicly, and the scan will be unable to verify the signature.]]></CONSEQUENCE>
+        <SOLUTION><![CDATA[Please install a server certificate signed by a trusted third-party Certificate Authority.]]></SOLUTION>
+        <RESULT><![CDATA[Certificate #0 CN=test.net unable to get local issuer certificate]]></RESULT>
+      </VULN>
+      <VULN number="38601" severity="1" cveid="CVE-2013-2566">
+        <TITLE><![CDATA[SSL/TLS use of weak RC4 cipher]]></TITLE>
+        <LAST_UPDATE><![CDATA[2014-04-02T17:58:10Z]]></LAST_UPDATE>
+        <CVSS_BASE>2.6</CVSS_BASE>
+        <CVSS_TEMPORAL>2.2</CVSS_TEMPORAL>
+        <PCI_FLAG>0</PCI_FLAG>
+        <CVE_ID_LIST>
+          <CVE_ID>
+            <ID><![CDATA[CVE-2013-2566]]></ID>
+            <URL><![CDATA[http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2013-2566]]></URL>
+          </CVE_ID>
+        </CVE_ID_LIST>
+        <DIAGNOSIS><![CDATA[Secure Sockets Layer (SSL v2/v3) and Transport Layer Security (TLS ) protocols provide integrity, confidentiality and authenticity services to other protocols that lack these features.
+<P>
+SSL/TLS protocols use ciphers such as AES,DES, 3DES and RC4 to encrypt the content of the higher layer protocols and thus provide the confidentiality service. Normally the output of an encryption process is a sequence of random looking bytes. It was known that RC4 output has some bias in the output. Recently a group of researches has discovered that the there is a stronger bias in RC4, which make statistocal analysis of cihpertext more practical.
+<P>
+The described attack is to inject a malicious javascript into the victim's browser that would ensure that there are multiple connections being established with a target website and the same HTTP cookie is sent multiple times to the website in encrypted form. This provides the attacker a large set of ciphertext samples, that can be used for statistical analysis.]]></DIAGNOSIS>
+        <CONSEQUENCE><![CDATA[If this attack is carried out and an HTTP cookie is recovered, then the attacker can then use the cookie to impersonate the user whose cookie was recovered.
+<P>
+This attack is not very practical as it requires the attacker to have access to millions of samples of ciphertext, but there are certain assumptions that an attacker can make to improve the chances of recovering the cleartext from cihpertext. For examples HTTP cookies are either base64 encoded or hex digits. This information can help the attacker in their efforts to recover the cookie.]]></CONSEQUENCE>
+        <SOLUTION><![CDATA[RC4 should not be used where possible. One reason that RC4 was still being used was BEAST and Lucky13 attacks against CBC mode ciphers in SSL and TLS. However, TLSv 1.2 or later address these issues.]]></SOLUTION>
+        <RESULT><![CDATA[TLSv1.0 with RC4 ciphers is supported]]></RESULT>
+      </VULN>
+    </CAT>
+    <CAT value="Windows" port="3389" protocol="tcp" misc="over ssl">
+      <VULN number="90882" severity="3">
+        <TITLE><![CDATA[Windows Remote Desktop Protocol Weak Encryption Method Allowed]]></TITLE>
+        <LAST_UPDATE><![CDATA[2014-01-30T23:08:20Z]]></LAST_UPDATE>
+        <CVSS_BASE source="service">4.7</CVSS_BASE>
+        <CVSS_TEMPORAL>4</CVSS_TEMPORAL>
+        <PCI_FLAG>1</PCI_FLAG>
+        <DIAGNOSIS><![CDATA[Remote Desktop Protocol is a protocol by which Terminal Service provides desktop level access to a remote user.  It can be used to remotely log in and interact with a Windows machine.<P>
+Since RDP transfers sensitive information about the user and the system, it can be configured to use encryption to provide privacy and integrity for its sessions. It is possible to configure RDP to use encryption algorithms that are considered insecure, such as RC4 40bit and RC4 56 bit.]]></DIAGNOSIS>
+        <CONSEQUENCE><![CDATA[If an attacker has access to the network traffic with RDP sessions using weak encryption methods it's possible to bruteforce the encryption parameters and compromise privacy of the RDP session.]]></CONSEQUENCE>
+        <SOLUTION><![CDATA[RDP needs to be configured to use strong encryption methods or use SSL as the privacy and integrity provider.<P>
+To configure RDP encryption methods 'Terminal Services Configuration' or 'Remote Desktop Session Host Configuration' snap-in can be launched in mmc.exe.<BR>
+In 'Terminal Services Configuration' or 'Remote Desktop Session Host Configuration' properties dialog box General tab for the Encryption Level 'High' should be selected.
+<P>
+On Windows XP the RDP configuration can be found under  Computer Configuration\Administrative Templates\Windows Components\Terminal Services and User Configuration\Administrative Templates\Windows Components\Terminal Services.  Under Encryption and Security item, double click on 'Set client connection encryption level' and enable the policy and select high for the 'Encryption level'.<P>
+For more details on configuration on 2008 R2 systems see <A HREF="http://technet.microsoft.com/en-us/library/cc770833.aspx" TARGET="_blank">Configure Server Authentication and Encryption Levels</A>.]]></SOLUTION>
+        <RESULT><![CDATA[RDP Supported Encrytion methods:  RC4(40 bit),RC4(56 bit)]]></RESULT>
+      </VULN>
+    </CAT>
+  </VULNS>
+  <PRACTICES>
+    <CAT value="Windows">
+      <PRACTICE number="90043" severity="3">
+        <TITLE><![CDATA[SMB Signing Disabled or SMB Signing Not Required]]></TITLE>
+        <LAST_UPDATE><![CDATA[2014-02-11T22:43:12Z]]></LAST_UPDATE>
+        <CVSS_BASE source="service">7.3</CVSS_BASE>
+        <CVSS_TEMPORAL>6.3</CVSS_TEMPORAL>
+        <PCI_FLAG>1</PCI_FLAG>
+        <DIAGNOSIS><![CDATA[This host does not seem to be using SMB (Server Message Block) signing. SMB signing is a security mechanism in the SMB protocol and is also known as security signatures. SMB signing is designed to help improve the security of the SMB protocol.
+<P>
+SMB signing adds security to a network using NetBIOS, avoiding man-in-the-middle attacks.
+<P>
+When SMB signing is enabled on both the client and server SMB sessions are authenticated between the machines on a packet by packet basis.]]></DIAGNOSIS>
+        <CONSEQUENCE><![CDATA[Unauthorized users sniffing the network could catch many challenge/response exchanges and replay the whole thing to grab particular session keys, and then authenticate on the Domain Controller.]]></CONSEQUENCE>
+        <SOLUTION><![CDATA[Without SMB signing, a device could intercept SMB network packets from an originating computer, alter their contents, and broadcast them to the destination computer. Since, digitally signing the packets enables the recipient of the packets to confirm their point of origination and their authenticity, it is recommended that SMB signing is enabled and required.
+<P>
+Please refer to Microsoft's article <A HREF="http://support.microsoft.com/kb/887429" TARGET="_blank">887429</A> for information on enabling SMB signing. 
+<P>
+For Windows Server 2008 R2, Windows Server 2012, please refer to Microsoft's article <A HREF="http://technet.microsoft.com/en-us/library/cc731957.aspx" TARGET="_blank">Require SMB Security Signatures</A> for information on enabling SMB signing. For group policies please refer to Microsoft's article <A HREF="http://technet.microsoft.com/en-us/library/cc731654" TARGET="_blank">Modify Security Policies in Default Domain Controllers Policy</A>]]></SOLUTION>
+      </PRACTICE>
+    </CAT>
+    <CAT value="General remote services" port="4008" protocol="tcp">
+      <PRACTICE number="38229" severity="3">
+        <TITLE><![CDATA[Service Stopped Responding]]></TITLE>
+        <LAST_UPDATE><![CDATA[2009-06-12T21:45:46Z]]></LAST_UPDATE>
+        <CVSS_BASE source="service">5</CVSS_BASE>
+        <CVSS_TEMPORAL>4</CVSS_TEMPORAL>
+        <PCI_FLAG>1</PCI_FLAG>
+        <DIAGNOSIS><![CDATA[The service/daemon listening on the port shown stopped responding to TCP connection attempts during the scan.]]></DIAGNOSIS>
+        <CONSEQUENCE><![CDATA[The service/daemon is vulnerable to a denial of service attack.]]></CONSEQUENCE>
+        <SOLUTION><![CDATA[This QID can be posted for a number of reasons (e.g., service crash, bandwidth utilization, or a device with IPS-like behavior).
+<P>
+If the service has crashed, report the incident to Customer Support or your QualysGuard re-seller, and stop scanning the service's listening port until the issue is resolved.
+<P>
+If the issue is bandwidth related, modify the Qualys performance settings to lower the scan impact.
+<P>
+If you do not find any service/daemon listening on this port, it may be a dynamic port and you may ignore this report.
+<P>
+<B> This is posted as a PCI fail since the service stopped responding. Further checks were not launched for that service and therefore the PCI assessment was incomplete. </B>]]></SOLUTION>
+        <RESULT><![CDATA[3 consecutive connection attempts failed after a total number of 1 successful connections.]]></RESULT>
+      </PRACTICE>
+    </CAT>
+    <CAT value="General remote services" port="4007" protocol="tcp">
+      <PRACTICE number="38229" severity="3">
+        <TITLE><![CDATA[Service Stopped Responding]]></TITLE>
+        <LAST_UPDATE><![CDATA[2009-06-12T21:45:46Z]]></LAST_UPDATE>
+        <CVSS_BASE source="service">5</CVSS_BASE>
+        <CVSS_TEMPORAL>4</CVSS_TEMPORAL>
+        <PCI_FLAG>1</PCI_FLAG>
+        <DIAGNOSIS><![CDATA[The service/daemon listening on the port shown stopped responding to TCP connection attempts during the scan.]]></DIAGNOSIS>
+        <CONSEQUENCE><![CDATA[The service/daemon is vulnerable to a denial of service attack.]]></CONSEQUENCE>
+        <SOLUTION><![CDATA[This QID can be posted for a number of reasons (e.g., service crash, bandwidth utilization, or a device with IPS-like behavior).
+<P>
+If the service has crashed, report the incident to Customer Support or your QualysGuard re-seller, and stop scanning the service's listening port until the issue is resolved.
+<P>
+If the issue is bandwidth related, modify the Qualys performance settings to lower the scan impact.
+<P>
+If you do not find any service/daemon listening on this port, it may be a dynamic port and you may ignore this report.
+<P>
+<B> This is posted as a PCI fail since the service stopped responding. Further checks were not launched for that service and therefore the PCI assessment was incomplete. </B>]]></SOLUTION>
+        <RESULT><![CDATA[3 consecutive connection attempts failed after a total number of 1 successful connections.]]></RESULT>
+      </PRACTICE>
+    </CAT>
+  </PRACTICES>
+</IP>
+</SCAN>
+<!-- CONFIDENTIAL AND PROPRIETARY INFORMATION. Qualys provides the QualysGuard Service "As Is," without any warranty of any kind. Qualys makes no warranty that the information contained in this report is complete or error-free. Copyright 2014, Qualys, Inc. //--> 
