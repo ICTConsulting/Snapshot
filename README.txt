@@ -167,12 +167,12 @@ We are working to extend the limit of the maximum number of snapshots in visuali
 In addition we would provide some customization options in reporting.
 
 
--------------------------------------------------------------------------------------------------
+----------------------------------------------------------------------------------------
 7) Contacts
--------------------------------------------------------------------------------------------------
+----------------------------------------------------------------------------------------
 
 Cristiano Conti (conti@ictc.it) and Simone Fontana (fontana@ictc.it).
 
 
 
-Copyright (c) 2014 ICT Consulting
+Copyright (c) 2015 ICT Consulting
